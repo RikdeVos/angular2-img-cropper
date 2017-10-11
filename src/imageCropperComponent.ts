@@ -34,6 +34,7 @@ export class ImageCropperComponent implements AfterViewInit, OnChanges, OnDestro
     @Output() public cropPositionChange:EventEmitter<CropPosition> = new EventEmitter<CropPosition>();
 
     @Output() public onCrop:EventEmitter<any> = new EventEmitter();
+    @Output() public onFileChange:EventEmitter<any> = new EventEmitter();
 
     public croppedWidth:number;
     public croppedHeight:number;
@@ -131,6 +132,7 @@ export class ImageCropperComponent implements AfterViewInit, OnChanges, OnDestro
     }
 
     public fileChangeListener($event:any) {
+        this.onFileChange.emit($event);
         if($event.target.files.length === 0) return;
 
         let file:File = $event.target.files[0];
