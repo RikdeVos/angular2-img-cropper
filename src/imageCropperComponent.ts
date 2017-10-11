@@ -32,9 +32,8 @@ export class ImageCropperComponent implements AfterViewInit, OnChanges, OnDestro
     @Input() public cropper:ImageCropper;
     @Input() public cropPosition:CropPosition;
     @Output() public cropPositionChange:EventEmitter<CropPosition> = new EventEmitter<CropPosition>();
-
-    @Output() public onCrop:EventEmitter<any> = new EventEmitter();
     @Output() public onFileChange:EventEmitter<any> = new EventEmitter();
+    @Output() public onCrop:EventEmitter<any> = new EventEmitter();
 
     public croppedWidth:number;
     public croppedHeight:number;
